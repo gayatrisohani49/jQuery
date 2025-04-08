@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+
+    body {
+      background-color: lightgoldenrodyellow;
+      font-family: Arial, sans-serif;
+    }
+    .gallery-container {
+      padding: 20px;
+    }
+    .filter-buttons {
+      margin-bottom: 20px;
+    }
+    .filter-buttons button {
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    .gallery-item {
+      display: inline-block;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 250px;
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .gallery-item h5 {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container text-center py-5">
+    <h1>Image Gallery</h1>
+  </div>
+  <div class="container text-center filter-buttons">
+    <button class="btn btn-primary" id="all">All</button>
+    <button class="btn btn-info" id="nature">Nature</button>
+    <button class="btn btn-warning" id="city">City</button>
+    <button class="btn btn-success" id="animals">Animals</button>
+  </div>
+
+  <div class="container gallery-container">
+    <div class="row">
+      <div class="col-md-4 gallery-item category-nature">
+        <img src="https://static.vecteezy.com/system/resources/previews/032/267/536/large_2x/waterfall-lotus-flower-waterfall-nature-nature-wallpaper-nature-wallpaper-nature-wallpaper-ai-generated-free-photo.jpg" style="width:100%" alt="Nature Image 1">
+        <h5>Nature 1</h5>
+      </div>
+      <div class="col-md-4 gallery-item category-city">
+        <img src="https://media.istockphoto.com/id/1452467224/photo/street-in-financial-district-of-chicago.jpg?s=612x612&w=0&k=20&c=UNuiR54SaJf3VWI5NiM1pM8YHwZRLEh-Kg6DsQM53Mw=" style="width:100%" alt="City Image 1" >
+        <h5>City 1</h5>
+      </div>
+      <div class="col-md-4 gallery-item category-animals">
+        <img src="https://w0.peakpx.com/wallpaper/280/283/HD-wallpaper-cute-deer-cute-deer-animal-wild.jpg" style="width:100%" alt="Animals Image 1">
+        <h5>Animals 1</h5>
+        </div>
+      <div class="col-md-4 gallery-item category-nature">
+        <img src="https://t4.ftcdn.net/jpg/02/94/17/33/360_F_294173389_c1rKAoseHmbUTBfd58wwSr0fgD1D5Y3Y.jpg" alt="Nature Image 2" style="width:100%">
+        <h5>Nature 2</h5>
+      </div>
+      <div class="col-md-4 gallery-item category-city">
+        <img src="https://media.gettyimages.com/id/535829219/photo/city-skyline-at-night-with-bellagio-hotel-water-fountains-las-vegas-nevada-america-usa.jpg?s=612x612&w=gi&k=20&c=8qt03GCa_DrGsi5xBmKGt0qm2cCqQ8QollUpdfvjfXg=" style="width:100%" alt="City Image 2">
+        <h5>City 2</h5>
+      </div>
+      <div class="col-md-4 gallery-item category-animals">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDGXUAaleIDvFW52fiVocGvYOk4WJ91ivSJz2ZBPO3hBjj4ruIoUQCLJSBzOn2kA2bJEQ&usqp=CAU" style="width:100%" alt="Animals Image 2">
+        <h5>Animals 2</h5>
+        </div>
+        <div class="col-md-4 gallery-item category-nature">
+            <img src="https://images.pexels.com/photos/381739/pexels-photo-381739.jpeg?cs=srgb&dl=pexels-sevenstormphotography-381739.jpg&fm=jpg" style="width:100%" alt="Nature Image 3">
+            <h5>Nature 3</h5>
+            </div><div class="col-md-4 gallery-item category-city">
+                <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D" style="width:100%" alt="City Image 3">
+                <h5>City 3</h5>
+              </div>
+         <div class="col-md-4 gallery-item category-animals">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_nKyZNhm4ee7qhGbtQ7RqagcD-Ekd7gY1P3saZc1H9Z8ITqTAtV5yr35mEC_mJoeBtF8&usqp=CAU" style="width:100%" alt="Animals Image 3">
+                <h5>Animals 3</h5>
+                </div>    
+
+    </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+  <!-- jQuery UI for effects -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      // Filter images based on category
+      $("#all").click(function() {
+        $(".gallery-item").fadeIn(500); // Show all images with fade-in
+      });
+
+      $("#nature").click(function() {
+        $(".gallery-item").not(".category-nature").slideUp(500); // Hide non-nature images with slide-up
+        $(".category-nature").fadeIn(500); // Show nature images with fade-in
+      });
+
+      $("#city").click(function() {
+        $(".gallery-item").not(".category-city").slideUp(500); // Hide non-city images
+        $(".category-city").fadeIn(500); // Show city images
+      });
+
+      $("#animals").click(function() {
+        $(".gallery-item").not(".category-animals").slideUp(500); // Hide non-animals images
+        $(".category-animals").fadeIn(500); // Show animals images
+      });
+    });
+  </script>
+
+</body>
+</html>
+
